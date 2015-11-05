@@ -2,8 +2,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-//import java.utilsCollections;
-
 public class arrr {
 	public static void main(String[] args){
 
@@ -51,7 +49,6 @@ array_handmade1 [9] = array_console.nextInt();
 //Сортировка с меньшего по большее
 Arrays.sort(array_handmade1);
 
-
 System.out.println();
 System.out.println("Массив отсортирован с меньшего по большее");
 System.out.println(Arrays.toString(array_handmade1));
@@ -74,11 +71,12 @@ System.out.println("Введите количество элементов ма�
 int N = array_console.nextInt();
 int array_2[] = new int [N];
 for(int i_2=0; i_2<N; i_2++){
-	array_2[i_2]=(int)(Math.random()*100+1);
+array_2[i_2]=(int)(Math.random()*100+1);
 }
 System.out.println();
 System.out.println("Полученный массив array_2");
 System.out.println(Arrays.toString(array_2));
+
 //2. Поменять 1-й и последний элемент местами.
 int first = array_2[0];
 array_2[0] = array_2[N-1];
@@ -98,12 +96,12 @@ System.out.println();
 System.out.println("ВВедите 10 элементов массива array_3");		 
 
 for(int i_3=0; i_3<10; i_3++){
-	
 	array_3[i_3]=array_console.nextInt();
 }
 System.out.println();
 System.out.println("Полученный массив array_3");	
 System.out.println(Arrays.toString(array_3));
+
 //2. Разбить его на 2 массива равной длинны.
 
 Integer [] array_first = Arrays.copyOfRange(array_3, 0, 5);
@@ -120,27 +118,29 @@ System.out.println(Arrays.toString(array_second));
 //3. Отсортировать каждую из половинок и вывести их содержимое на экран.
 		//array_first
 		//array_second
-		//Сортировка и вывод с меньшего по большее
-		Arrays.sort(array_first);
-		Arrays.sort(array_second);
+//Сортировка и вывод с меньшего по большее
+Arrays.sort(array_first);
+Arrays.sort(array_second);
 		
-		System.out.println();
-		System.out.println("Сортировка Min-Max Первой части");
-		System.out.println(Arrays.toString(array_first));
-		System.out.println();
-		System.out.println("Сортировка Min-Max Второй части");
-		System.out.println(Arrays.toString(array_second));
+System.out.println();
+System.out.println("Сортировка Min-Max Первой части");
+System.out.println(Arrays.toString(array_first));
+		
+System.out.println();
+System.out.println("Сортировка Min-Max Второй части");
+System.out.println(Arrays.toString(array_second));
 			
 		//Сортировка с большего по меньшее
 		
-	Arrays.sort(array_first, Collections.reverseOrder());
-	Arrays.sort(array_second, Collections.reverseOrder());
-	System.out.println();
-	System.out.println("Сортировка Max-Min Первой части ");
-	System.out.println(Arrays.toString(array_first));
-	System.out.println();
-	System.out.println("Сортировка Max-Min Второй части ");
-	System.out.println(Arrays.toString(array_second));
+Arrays.sort(array_first, Collections.reverseOrder());
+Arrays.sort(array_second, Collections.reverseOrder());
+System.out.println();
+System.out.println("Сортировка Max-Min Первой части ");
+System.out.println(Arrays.toString(array_first));
+System.out.println();
+System.out.println("Сортировка Max-Min Второй части ");
+System.out.println(Arrays.toString(array_second));
+
 
 //Задача 4:	
 //Среднее арифметическое элементов массива
@@ -158,10 +158,9 @@ System.out.println(Arrays.toString(array_second));
 		System.out.println(Arrays.toString(array_4));
 	
 		//Вычисляем Среднее арифметичное	
-		//i_4 - индекс
+	
 float Srednee=0;
 for(int i_4 = 0; i_4<N4; i_4++){
-
 Srednee+=array_4[i_4]/N4;
 }
 System.out.println();
