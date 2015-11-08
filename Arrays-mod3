@@ -2,9 +2,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
+
 public class arrr {
 	public static void main(String[] args){
-
 		
 //Задача 1:
 		
@@ -14,8 +14,7 @@ int[] mass1 = {37, 55, 89, 33, 87, 26, 98, 14, 44, 18};
 Arrays.sort(mass1);		
 		
 //3. Вывести на экран результат
-System.out.println(Arrays.toString(mass1)); 
-System.out.println();		
+System.out.println(Arrays.toString(mass1)+"\n"); 
 
 /*2.2 Отсортировать числа в массиве Max-min,
  * для этого используем тип Integer, вместо int
@@ -26,14 +25,13 @@ Arrays.sort(mass2, Collections.reverseOrder());
 
 //3.2. Вывести на экран результат
 String s2 = Arrays.toString(mass2);
-System.out.println(s2);
+System.out.println(s2+"\n");
 
 //4. Сделать возможность наполнения массива с клавиатуры
 Scanner array_console = new Scanner(System.in);
 
 Integer array_handmade1[] = new Integer[10];
-System.out.println();
-System.out.println("ВВедите 10 элементов массива array_handmade1");		 
+System.out.println("ВВедите 10 элементов массива array_handmade1"+"\n");		 
 //Вводим вручную каждый эелемент
 array_handmade1 [0] = array_console.nextInt();
 array_handmade1 [1] = array_console.nextInt();
@@ -49,122 +47,129 @@ array_handmade1 [9] = array_console.nextInt();
 //Сортировка с меньшего по большее
 Arrays.sort(array_handmade1);
 
-System.out.println();
 System.out.println("Массив отсортирован с меньшего по большее");
-System.out.println(Arrays.toString(array_handmade1));
+System.out.println(Arrays.toString(array_handmade1)+"\n");
 
 //Сортировка с большего по меньшее
 //использую тип Integer, скопируем массив array_handmade2 из array_handmade1
 Integer array_handmade2[] = Arrays.copyOf(array_handmade1,10);
-Arrays.sort(array_handmade2, Collections.reverseOrder());
+Arrays.sort(array_handmade2, Collections.reverseOrder()); //reverseOrder() - название компаратора для Коллекции
 
-System.out.println();
 System.out.println("Массив отсортирован с большего по меньшее");
-System.out.println(Arrays.toString(array_handmade2));
-
+System.out.println(Arrays.toString(array_handmade2)+"\n");
 
 //Задача 2:
 
 //1. Задать массив целых чисел длинной N эл. - N - введется с консоли, элементы - генерацией случайных чисел
-System.out.println();
 System.out.println("Введите количество элементов массива array_2");
 int N = array_console.nextInt();
 int array_2[] = new int [N];
 for(int i_2=0; i_2<N; i_2++){
-array_2[i_2]=(int)(Math.random()*100+1);
+	array_2[i_2]=(int)(Math.random()*100+1);
 }
-System.out.println();
-System.out.println("Полученный массив array_2");
-System.out.println(Arrays.toString(array_2));
 
+System.out.println("Полученный массив array_2");
+System.out.println(Arrays.toString(array_2)+"\n");
 //2. Поменять 1-й и последний элемент местами.
 int first = array_2[0];
 array_2[0] = array_2[N-1];
 array_2[N-1] = first;
 
 //3. Вывести массив на экран.
-System.out.println();
 System.out.println("В массиве array_2 первый элемент заменен на последний");
-System.out.println(Arrays.toString(array_2));
+System.out.println(Arrays.toString(array_2)+"\n");
 
 
 
 //Задача 3:
 //1. Ввести с клавиатуры массив из 10 чисел. - Имя array_3
 Integer array_3[] = new Integer[10];
-System.out.println();
-System.out.println("ВВедите 10 элементов массива array_3");		 
+System.out.println("ВВедите 10 элементов массива array_3"+"\n");		 
 
 for(int i_3=0; i_3<10; i_3++){
+	
 	array_3[i_3]=array_console.nextInt();
 }
-System.out.println();
 System.out.println("Полученный массив array_3");	
-System.out.println(Arrays.toString(array_3));
-
+System.out.println(Arrays.toString(array_3)+"\n");
 //2. Разбить его на 2 массива равной длинны.
 
 Integer [] array_first = Arrays.copyOfRange(array_3, 0, 5);
 Integer [] array_second = Arrays.copyOfRange(array_3, 5, 10);
-System.out.println();
-System.out.println("Разобьем массив array_3 на массивы array_first и array_second ");
-System.out.println();
-System.out.println("Первая часть - 5 элементов");
+
+System.out.println("Разобьем массив array_3 на массивы array_first и array_second "+"\n");
+
+System.out.println("Первая часть - 5 элементов"+"\n");
 System.out.println(Arrays.toString(array_first));
-System.out.println();
-System.out.println("Вторая часть - 5 элементов");
-System.out.println(Arrays.toString(array_second));
+
+System.out.println("Вторая часть - 5 элементов"+"\n");
+System.out.println(Arrays.toString(array_second)+"\n");
 
 //3. Отсортировать каждую из половинок и вывести их содержимое на экран.
 		//array_first
 		//array_second
-//Сортировка и вывод с меньшего по большее
-Arrays.sort(array_first);
-Arrays.sort(array_second);
+		//Сортировка и вывод с меньшего по большее
+		Arrays.sort(array_first);
+		Arrays.sort(array_second);
 		
-System.out.println();
-System.out.println("Сортировка Min-Max Первой части");
-System.out.println(Arrays.toString(array_first));
 		
-System.out.println();
-System.out.println("Сортировка Min-Max Второй части");
-System.out.println(Arrays.toString(array_second));
+		System.out.println("Сортировка Min-Max Первой части"+"\n");
+		System.out.println(Arrays.toString(array_first));
+		System.out.println("Сортировка Min-Max Второй части"+"\n");
+		System.out.println(Arrays.toString(array_second));
 			
 		//Сортировка с большего по меньшее
 		
-Arrays.sort(array_first, Collections.reverseOrder());
-Arrays.sort(array_second, Collections.reverseOrder());
-System.out.println();
-System.out.println("Сортировка Max-Min Первой части ");
-System.out.println(Arrays.toString(array_first));
-System.out.println();
-System.out.println("Сортировка Max-Min Второй части ");
-System.out.println(Arrays.toString(array_second));
-
+	Arrays.sort(array_first, Collections.reverseOrder());
+	Arrays.sort(array_second, Collections.reverseOrder());
+	
+	System.out.println("Сортировка Max-Min Первой части"+"\n");
+	System.out.println(Arrays.toString(array_first));
+	
+	System.out.println("Сортировка Max-Min Второй части"+"\n");
+	System.out.println(Arrays.toString(array_second)+"\n");
 
 //Задача 4:	
 //Среднее арифметическое элементов массива
 //N4 - количество элементов, i_4 - индекс
-				System.out.println();
-		System.out.println("Введите число элементов массива array4");	
+		System.out.println("Введите число элементов массива array4"+"\n");	
 		int N4 = array_console.nextInt();
 		float array_4 [] = new float [N4];
 
 		for(int i_4=0; i_4<N4; i_4++){
 			array_4[i_4]=(float)(Math.random()*10+10);
 		}
-		System.out.println();
-		System.out.println("Получаем массив array_4");
-		System.out.println(Arrays.toString(array_4));
+		System.out.println("Получаем массив array_4"+"\n");
+		System.out.println(Arrays.toString(array_4)+"\n");
 	
 		//Вычисляем Среднее арифметичное	
-	
+		//i_4 - индекс
 float Srednee=0;
 for(int i_4 = 0; i_4<N4; i_4++){
+
 Srednee+=array_4[i_4]/N4;
 }
-System.out.println();
+
 System.out.println("Cреднее арифметическое введенного массива array_4 =  " + Srednee);
 	
+
+/*Написать программу, которая позволит задать длину массива с клавиатуры, наполнить его
+элементами, а затем выводить нужный элемент по его индексу на консоль.*/
+
+System.out.println("Введите число элементов массива array5"+"\n");	
+int N5 = array_console.nextInt();
+int array_5 [] = new int [N5];
+
+for(int i_5=0; i_5<N5; i_5++){
+	array_5[i_5]=(int)(Math.random()*100+10);
+}
+System.out.println("Получаем массив array_5"+"\n");
+System.out.println(Arrays.toString(array_5)+"\n");
+
+System.out.println("Введите индекс по которому находится искомый элемент"+"\n");
+
+int i_5 = array_console.nextInt();
+
+System.out.println(array_5[i_5]);
 	}
 }
